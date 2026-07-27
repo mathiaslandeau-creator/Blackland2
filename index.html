@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blackland — Investir dans l'immobilier méditerranéen</title>
+<meta name="description" content="Blackland gère des biens à courte et longue durée sur la Riviera albanaise et à Corfou, avec un suivi financier entièrement transparent pour ses investisseurs." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#0A0A0A;
+    --ink-panel:#141412;
+    --ink-panel-2:#1C1B18;
+    --ivory:#F3EEE3;
+    --ivory-dim:#C9C3B4;
+    --ivory-faint:#8C8577;
+    --brass:#B08D57;
+    --brass-light:#C9A876;
+    --line:rgba(243,238,227,0.10);
+    --line-strong:rgba(243,238,227,0.20);
+    --wine:#B06A5C;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--ink); color:var(--ivory);
+    font-family:'Inter',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Cormorant Garamond',serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  section{padding:110px 0;}
+  @media (max-width:720px){ section{padding:72px 0;} .wrap{padding:0 20px;} }
+
+  .eyebrow{
+    font-size:11px; letter-spacing:2.4px; text-transform:uppercase; color:var(--brass-light);
+    display:flex; align-items:center; gap:10px; margin-bottom:18px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--brass);}
+
+  h1,h2,h3{font-family:'Cormorant Garamond',serif; font-weight:600; margin:0; color:var(--ivory);}
+  h2{font-size:clamp(30px,4vw,44px); line-height:1.15;}
+  p{color:var(--ivory-dim); margin:0; text-align:justify; text-justify:inter-word; hyphens:auto; -webkit-hyphens:auto;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-family:'Inter',sans-serif;
+    font-size:13.5px; font-weight:500; padding:13px 26px; border-radius:3px; cursor:pointer;
+    border:1px solid var(--line-strong); background:transparent; color:var(--ivory);
+    transition:all .2s ease;
+  }
+  .btn:hover{border-color:var(--brass); color:var(--brass-light);}
+  .btn-brass{background:var(--brass); border-color:var(--brass); color:var(--ink); font-weight:600;}
+  .btn-brass:hover{background:var(--brass-light); border-color:var(--brass-light); color:var(--ink);}
+  .btn-small{padding:8px 14px; font-size:12.5px;}
+  .btn-danger{border-color:var(--wine); color:var(--wine);}
+  .btn-danger:hover{border-color:var(--wine); color:#fff; background:var(--wine);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.88); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+  .brand{font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; letter-spacing:0.5px;}
+  .brand span{color:var(--brass-light);}
+  .nav-links{display:flex; gap:34px; font-size:13.5px; color:var(--ivory-dim);}
+  .nav-links a:hover{color:var(--brass-light);}
+  @media (max-width:820px){ .nav-links{display:none;} }
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .lang-switch{display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:12px;}
+  .lang-sep{color:var(--line-strong);}
+  .lang-btn{
+    background:none; border:none; cursor:pointer; padding:4px 2px; color:var(--ivory-faint);
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.5px; transition:color .2s ease;
+  }
+  .lang-btn:hover{color:var(--brass-light);}
+  .lang-btn.active{color:var(--brass-light); font-weight:600;}
+
+  /* ---------- ADMIN BAR ---------- */
+  #adminBar{
+    display:none; background:var(--brass); color:var(--ink); font-size:12.5px; font-weight:600;
+    text-align:center; padding:9px 16px;
+  }
+  #adminBar button{
+    background:none; border:none; text-decoration:underline; cursor:pointer; font-weight:600;
+    color:var(--ink); font-size:12.5px; margin-left:10px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ border-bottom:1px solid var(--line); }
+  .hero .wrap{ padding-top:20px; padding-bottom:110px; }
+  @media (max-width:700px){ .hero .wrap{ padding-top:16px; padding-bottom:70px; } }
+  .hero-content{max-width:640px;}
+  .hero h1{font-size:clamp(36px,4.6vw,58px); line-height:1.1; margin-bottom:26px;}
+  .hero h1 em{font-style:italic; color:var(--brass-light);}
+  .hero-sub{font-size:16px; color:var(--ivory-dim); margin-bottom:38px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* ---------- STATS BAND ---------- */
+  .stats-band{border-bottom:1px solid var(--line); background:var(--ink-panel);}
+  .stats-grid{display:grid; grid-template-columns:1fr 1fr;}
+  @media (max-width:720px){ .stats-grid{grid-template-columns:1fr;} }
+  .stat-cell{padding:56px 40px; text-align:center; border-left:1px solid var(--line); position:relative;}
+  .stat-cell:first-child{border-left:none;}
+  @media (max-width:720px){ .stat-cell{border-left:none; border-top:1px solid var(--line);} .stat-cell:first-child{border-top:none;} }
+  .stat-value{font-family:'IBM Plex Mono',monospace; font-size:clamp(30px,4.4vw,46px); color:var(--brass-light); font-weight:500;}
+  .stat-label{font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--ivory-faint); margin-top:10px;}
+  .stat-edit{margin-top:14px;}
+
+  /* ---------- MARKETS ---------- */
+  .markets-head{max-width:640px; margin-bottom:60px;}
+  .markets-grid{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);}
+  @media (max-width:860px){ .markets-grid{grid-template-columns:1fr;} }
+  .market-card{background:var(--ink); padding:44px 40px;}
+  .market-top{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:22px;}
+  .market-icon{width:56px; height:56px; flex-shrink:0;}
+  .market-badge{
+    font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--brass-light);
+    border:1px solid var(--line-strong); border-radius:3px; padding:6px 12px; text-align:center;
+  }
+  .market-badge small{display:block; font-family:'Inter',sans-serif; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:var(--ivory-faint); margin-top:3px;}
+  .market-card h3{font-size:26px; margin-bottom:4px;}
+  .market-card .loc{font-size:12.5px; color:var(--ivory-faint); letter-spacing:0.5px; text-transform:uppercase; margin-bottom:20px; display:block;}
+  .market-card p{font-size:14.5px; margin-bottom:14px;}
+  .market-tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:22px;}
+  .tag{font-size:11px; letter-spacing:0.5px; color:var(--ivory-dim); border:1px solid var(--line); border-radius:20px; padding:5px 12px;}
+
+  /* ---------- OPPORTUNITIES ---------- */
+  .opps{background:var(--ink-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .opps-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--line); margin-top:56px;}
+  @media (max-width:860px){ .opps-grid{grid-template-columns:1fr;} }
+  .opp-card{background:var(--ink-panel); display:flex; flex-direction:column;}
+  .opp-visual{
+    aspect-ratio:16/10; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(160deg, var(--ink-panel-2), var(--ink) 120%);
+    border-bottom:1px solid var(--line); position:relative; overflow:hidden;
+  }
+  .opp-visual svg{width:96px; height:96px; opacity:0.92;}
+  .opp-visual::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(circle at 30% 20%, rgba(176,141,87,0.10), transparent 60%);
+  }
+  .opp-edit-btn{
+    position:absolute; top:10px; right:10px; width:30px; height:30px; border-radius:50%;
+    background:rgba(10,10,10,0.7); border:1px solid var(--line-strong); color:var(--ivory);
+    cursor:pointer; font-size:13px; z-index:2;
+  }
+  .opp-edit-btn:hover{border-color:var(--brass); color:var(--brass-light);}
+  .opp-body{padding:28px 30px 30px;}
+  .opp-tag{font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--brass-light); margin-bottom:10px;}
+  .opp-body h3{font-size:22px; margin-bottom:4px;}
+  .opp-body .loc{font-size:12px; color:var(--ivory-faint); text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:14px;}
+  .opp-body p{font-size:13.5px; margin-bottom:20px;}
+  .opp-foot{display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid var(--line);}
+  .opp-price{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ivory-dim);}
+  .opp-link{font-size:12.5px; color:var(--brass-light); display:flex; align-items:center; gap:5px;}
+  .opp-add-card{
+    background:var(--ink-panel); display:flex; align-items:center; justify-content:center;
+    min-height:220px; border:1px dashed var(--line-strong); cursor:pointer; color:var(--ivory-faint);
+    font-size:13.5px; gap:8px; transition:border-color .2s, color .2s;
+  }
+  .opp-add-card:hover{border-color:var(--brass); color:var(--brass-light);}
+
+  /* ---------- TRUST ---------- */
+  .trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin-top:56px;}
+  @media (max-width:820px){ .trust-grid{grid-template-columns:1fr;} }
+  .trust-item .num{font-family:'IBM Plex Mono',monospace; color:var(--brass); font-size:13px; margin-bottom:14px; letter-spacing:1px;}
+  .trust-item h3{font-size:20px; margin-bottom:10px;}
+  .trust-item p{font-size:14px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;}
+  .contact-head{max-width:560px; margin:0 auto 50px;}
+  .contact-actions{display:flex; gap:18px; justify-content:center; flex-wrap:wrap;}
+  .contact-card{
+    display:flex; align-items:center; gap:14px; padding:20px 28px; border:1px solid var(--line-strong);
+    border-radius:4px; min-width:260px; text-align:left; transition:border-color .2s ease, transform .2s ease;
+  }
+  .contact-card:hover{border-color:var(--brass); transform:translateY(-2px);}
+  .contact-card .ic{
+    width:42px; height:42px; border-radius:50%; border:1px solid var(--brass); display:flex;
+    align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-card .label{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--ivory-faint);}
+  .contact-card .value{font-size:14.5px; color:var(--ivory); margin-top:2px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line); padding:44px 0;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .foot-links{display:flex; gap:26px; font-size:12.5px; color:var(--ivory-faint);}
+  .foot-links a:hover{color:var(--brass-light);}
+  .foot-legal{font-size:11.5px; color:var(--ivory-faint); margin-top:26px; max-width:720px; line-height:1.6;}
+  .foot-admin{font-size:11px; color:var(--ivory-faint); opacity:0.6; margin-top:18px; background:none; border:none; cursor:pointer; padding:0;}
+  .foot-admin:hover{color:var(--brass-light); opacity:1;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
+
+  /* ---------- OVERLAYS (login + editor) ---------- */
+  .overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,0.68); z-index:300;
+    align-items:center; justify-content:center; padding:20px;
+  }
+  .overlay.open{display:flex;}
+  .panel{
+    background:var(--ink-panel); border:1px solid var(--line-strong); border-radius:6px;
+    width:100%; max-height:88vh; overflow-y:auto; padding:28px;
+  }
+  .login-panel{max-width:340px;}
+  .editor-panel{max-width:460px;}
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:14px; font-size:12px; color:var(--ivory-faint);}
+  .field input[type="text"], .field input[type="password"], .field textarea{
+    font-family:'Inter',sans-serif; font-size:14px; background:var(--ink-panel-2); border:1px solid var(--line);
+    color:var(--ivory); padding:9px 11px; border-radius:3px; outline:none;
+  }
+  .field input:focus, .field textarea:focus{border-color:var(--brass);}
+  .field textarea{resize:vertical;}
+  .photo-preview{width:100%; aspect-ratio:16/10; border-radius:4px; background:var(--ink); border:1px solid var(--line); overflow:hidden; margin-bottom:10px; display:flex; align-items:center; justify-content:center; color:var(--ivory-faint); font-size:12px;}
+  .photo-preview img{width:100%; height:100%; object-fit:cover;}
+  .file-btn{display:inline-block; cursor:pointer;}
+  .error-msg{color:var(--wine); font-size:12.5px; margin:8px 0;}
+  .panel-actions{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<div id="adminBar">
+  Mode édition activé — vous pouvez modifier les chiffres clés et les annonces.
+  <button onclick="logoutAdmin()">Quitter le mode édition</button>
+</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand-wrap" style="display:flex;align-items:center;gap:12px;"><img src="data:image/png;base64,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" alt="Blackland" style="height:40px;width:auto;display:block;"><div class="brand">Black<span>land</span></div></div>
+      <div class="nav-links">
+        <a href="#marches" data-i18n="nav_marches">Nos marchés</a>
+        <a href="#opportunites" data-i18n="nav_opportunites">Opportunités</a>
+        <a href="#transparence" data-i18n="nav_transparence">Transparence</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button type="button" class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+          <span class="lang-sep">/</span>
+          <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <!-- Lien vers l'app "Blackland — Registre de transparence" : voir INVESTOR_APP_URL dans le script en bas de page -->
+        <a href="#" class="btn btn-brass" id="investorBtn" data-i18n="nav_investors">Espace investisseurs</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="eyebrow" data-i18n="hero_eyebrow">Blackland Asset Management</div>
+      <h1 data-i18n-html="hero_h1">L'immobilier méditerranéen,<br><em>géré avec transparence.</em></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Blackland identifie et sélectionne le bien qui correspond le mieux à vos objectifs d'investissement, puis s'assure que ce dernier soit conforme aux exigences juridiques, administratives et techniques. Entre la Riviera albanaise et Corfou, nous sélectionnons, gérons et valorisons des biens à fort potentiel tout en assurant un suivi quotidien. Chaque euro de revenu, chaque charge et chaque étape de gestion sont accessibles en temps réel à nos investisseurs, dans une démarche de transparence totale.</p>
+      <div class="hero-actions">
+        <a href="#opportunites" class="btn btn-brass" data-i18n="hero_btn_opps">Voir les opportunités</a>
+        <a href="#marches" class="btn" data-i18n="hero_btn_markets">Découvrir nos marchés</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="wrap stats-grid">
+    <div class="stat-cell reveal in">
+      <div class="stat-value mono" id="statValuationDisplay">0 €</div>
+      <div class="stat-label" data-i18n="stat_valuation_label">Valorisation du portefeuille sous gestion</div>
+      <div class="stat-edit" id="statValuationEdit" style="display:none;">
+        <button class="btn btn-small" onclick="openStatEditor('valuation')" data-i18n="btn_edit">Modifier</button>
+      </div>
+    </div>
+    <div class="stat-cell reveal in">
+      <div class="stat-value mono" id="statRevenueDisplay">0 €</div>
+      <div class="stat-label" data-i18n="stat_revenue_label">Revenus locatifs générés par an</div>
+      <div class="stat-edit" id="statRevenueEdit" style="display:none;">
+        <button class="btn btn-small" onclick="openStatEditor('revenue')" data-i18n="btn_edit">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="marches">
+  <div class="wrap">
+    <div class="markets-head reveal">
+      <div class="eyebrow" data-i18n="markets_eyebrow">Deux territoires, deux logiques</div>
+      <h2 data-i18n="markets_h2">Où nous investissons</h2>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="markets-grid">
+
+      <div class="market-card reveal">
+        <div class="market-top">
+          <svg class="market-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 40 C14 30 20 30 28 36 C36 42 42 34 50 26" stroke="#B08D57" stroke-width="1.3"/>
+            <circle cx="40" cy="14" r="7" stroke="#B08D57" stroke-width="1.3"/>
+            <path d="M6 46 L50 46" stroke="#8C8577" stroke-width="1"/>
+          </svg>
+          <div class="market-badge">+10%<small data-i18n="market_badge_suffix">croissance / an</small></div>
+        </div>
+        <span class="loc" data-i18n="market1_loc">Albanie</span>
+        <h3 class="serif">Saranda &amp; Ksamil</h3>
+        <p data-i18n-html="market1_p1">La Riviera albanaise vit une transformation rapide. Portée par une demande touristique en forte hausse et des prix encore très inférieurs à ceux de ses voisines italienne et grecque, la région affiche une valorisation immobilière en progression d'environ <strong style="color:var(--ivory)">10&nbsp;% par an</strong>.</p>
+        <p data-i18n-html="market1_p2">Le marché locatif y est fortement saisonnier : une haute saison estivale intense concentre l'essentiel des revenus, ce qui en fait un territoire de <strong style="color:var(--ivory)">croissance de capital</strong> avant tout — le profil idéal pour un investisseur qui vise la plus-value.</p>
+        <div class="market-tags">
+          <span class="tag" data-i18n="market1_tag1">Marché émergent</span>
+          <span class="tag" data-i18n="market1_tag2">Forte saisonnalité</span>
+          <span class="tag" data-i18n="market1_tag3">Plus-value à moyen terme</span>
+        </div>
+      </div>
+
+      <div class="market-card reveal">
+        <div class="market-top">
+          <svg class="market-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 36 C14 28 20 28 28 34 C36 40 42 32 50 24" stroke="#B08D57" stroke-width="1.3"/>
+            <path d="M6 42 C14 34 20 34 28 40 C36 46 42 38 50 30" stroke="#8C8577" stroke-width="1"/>
+            <rect x="24" y="10" width="10" height="10" stroke="#B08D57" stroke-width="1.3"/>
+          </svg>
+          <div class="market-badge">+4%<small data-i18n="market_badge_suffix">croissance / an</small></div>
+        </div>
+        <span class="loc" data-i18n="market2_loc">Grèce</span>
+        <h3 class="serif">Corfou</h3>
+        <p data-i18n-html="market2_p1">Corfou est un marché mature, reconnu internationalement, avec une infrastructure touristique établie de longue date. Sa progression immobilière est plus modérée — environ <strong style="color:var(--ivory)">4&nbsp;% par an</strong> — mais nettement plus prévisible.</p>
+        <p data-i18n-html="market2_p2">Son atout majeur : un marché locatif actif <strong style="color:var(--ivory)">toute l'année</strong>, porté par une clientèle diversifiée et une vie insulaire qui ne s'arrête pas l'hiver. C'est le territoire du <strong style="color:var(--ivory)">rendement régulier</strong>, qui vient équilibrer un portefeuille.</p>
+        <div class="market-tags">
+          <span class="tag" data-i18n="market2_tag1">Marché mature</span>
+          <span class="tag" data-i18n="market2_tag2">Revenus toute l'année</span>
+          <span class="tag" data-i18n="market2_tag3">Stabilité</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="opps" id="opportunites">
+  <div class="wrap">
+    <div class="markets-head reveal">
+      <div class="eyebrow" data-i18n="opps_eyebrow">Une sélection de biens</div>
+      <h2 data-i18n="opps_h2">Un projet vous attend déjà sur place</h2>
+      <p style="margin-top:18px; font-size:15px;" data-i18n="opps_intro">Voici un aperçu de ce que nos investisseurs peuvent acquérir aujourd'hui. Chaque bien est géré et suivi par Blackland dès son acquisition.</p>
+    </div>
+
+    <div class="opps-grid" id="oppsGrid"></div>
+  </div>
+</section>
+
+<section id="transparence">
+  <div class="wrap">
+    <div class="markets-head reveal">
+      <div class="eyebrow" data-i18n="trust_eyebrow">Notre engagement</div>
+      <h2 data-i18n="trust_h2">Une gestion que vous pouvez vérifier, pas seulement croire</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <div class="num mono">01</div>
+        <h3 class="serif" data-i18n="trust1_h3">Transparence totale</h3>
+        <p data-i18n="trust1_p">Chaque réservation, chaque charge, chaque commission est enregistrée et consultable par nos investisseurs — sans rapport trimestriel filtré, en direct.</p>
+      </div>
+      <div class="trust-item reveal">
+        <div class="num mono">02</div>
+        <h3 class="serif" data-i18n="trust2_h3">Gestion locale</h3>
+        <p data-i18n="trust2_p">Nos équipes sur place gèrent l'accueil, le ménage et l'entretien de chaque bien, avec une exigence de qualité identique sur les deux territoires.</p>
+      </div>
+      <div class="trust-item reveal">
+        <div class="num mono">03</div>
+        <h3 class="serif" data-i18n="trust3_h3">Rendement suivi</h3>
+        <p data-i18n="trust3_p">Revenus, occupation et valorisation sont mesurés en continu, bien au-delà de l'estimation d'achat — pour un pilotage réel de votre investissement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-head reveal">
+      <div class="eyebrow" style="justify-content:center;" data-i18n="contact_eyebrow">Parlons de votre projet</div>
+      <h2 data-i18n="contact_h2">Contactez-nous</h2>
+      <p style="margin-top:16px;" data-i18n="contact_intro">Une question sur un bien, sur nos marchés, ou envie d'une visite ? Écrivez-nous directement.</p>
+    </div>
+    <div class="contact-actions reveal">
+      <a class="contact-card" href="mailto:mathias.landeau@blacklandasset.com">
+        <span class="ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h18v14H3V5z" stroke="#B08D57" stroke-width="1.3"/><path d="M3 6l9 7 9-7" stroke="#B08D57" stroke-width="1.3"/></svg>
+        </span>
+        <span>
+          <span class="label" data-i18n="contact_email_label">Par email</span>
+          <span class="value">mathias.landeau@blacklandasset.com</span>
+        </span>
+      </a>
+      <a class="contact-card" href="https://wa.me/33660404792" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 21l1.4-4A8 8 0 1112 20a8 8 0 01-4.9-1.6L6 21z" stroke="#B08D57" stroke-width="1.3"/></svg>
+        </span>
+        <span>
+          <span class="label" data-i18n="contact_whatsapp_label">Sur WhatsApp</span>
+          <span class="value">+33 6 60 40 47 92</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="brand-wrap" style="display:flex;align-items:center;gap:10px;"><img src="data:image/png;base64,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" alt="Blackland" style="height:30px;width:auto;display:block;"><div class="brand" style="font-size:18px;">Black<span>land</span></div></div>
+      <div class="foot-links">
+        <a href="#marches">Nos marchés</a>
+        <a href="#opportunites">Opportunités</a>
+        <a href="#transparence">Transparence</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="foot-legal" id="footLegal"><span id="footLegalText">Blackland Asset Management. Les informations présentées sur ce site (rendements, valorisations, croissance des marchés) sont communiquées à titre indicatif par Blackland et ne constituent pas un conseil en investissement. Tout investissement immobilier comporte des risques, y compris de perte en capital.</span> © <span id="year"></span> Blackland — <span id="footRights">Tous droits réservés.</span></p>
+    <button class="foot-admin" id="footAdminBtn" onclick="openLogin()">Admin</button>
+  </div>
+</footer>
+
+<!-- ===== LOGIN OVERLAY ===== -->
+<div class="overlay" id="loginOverlay">
+  <div class="panel login-panel">
+    <div class="serif" style="font-size:20px; margin-bottom:2px;">Connexion administrateur</div>
+    <div style="font-size:12px; color:var(--ivory-faint); margin-bottom:20px;">Réservé à la gestion du contenu de ce site.</div>
+    <div class="field">
+      <label>Identifiant</label>
+      <input type="text" id="loginUser" autocomplete="username" />
+    </div>
+    <div class="field">
+      <label>Mot de passe</label>
+      <input type="password" id="loginPass" autocomplete="current-password" />
+    </div>
+    <div class="error-msg" id="loginError" style="display:none;"></div>
+    <div class="panel-actions">
+      <button class="btn" onclick="closeLogin()">Annuler</button>
+      <button class="btn btn-brass" onclick="submitLogin()">Se connecter</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== STAT EDITOR OVERLAY ===== -->
+<div class="overlay" id="statOverlay">
+  <div class="panel login-panel">
+    <div class="serif" style="font-size:20px; margin-bottom:16px;" id="statOverlayTitle">Modifier</div>
+    <div class="field">
+      <label>Nouveau montant (€)</label>
+      <input type="text" id="statInput" inputmode="decimal" />
+    </div>
+    <div class="error-msg" id="statError" style="display:none;"></div>
+    <div class="panel-actions">
+      <button class="btn" onclick="closeStatEditor()">Annuler</button>
+      <button class="btn btn-brass" onclick="saveStatEditor()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LISTING EDITOR OVERLAY ===== -->
+<div class="overlay" id="listingOverlay">
+  <div class="panel editor-panel">
+    <div class="serif" style="font-size:20px; margin-bottom:16px;" id="listingOverlayTitle">Modifier ce bien</div>
+
+    <div class="photo-preview" id="listingPhotoPreview">Aucune photo</div>
+    <label class="file-btn btn btn-small" style="margin-bottom:16px;">
+      Choisir une photo
+      <input type="file" accept="image/*" id="listingPhotoInput" style="display:none;" onchange="onListingPhotoChange(event)" />
+    </label>
+
+    <div class="field"><label>Type de bien</label><input type="text" id="lTag" placeholder="Ex. Villa, Appartement 2+1, Penthouse..." /></div>
+    <div class="field"><label>Titre</label><input type="text" id="lTitle" /></div>
+    <div class="field"><label>Localisation</label><input type="text" id="lLoc" placeholder="Ex. Saranda, Albanie" /></div>
+    <div class="field"><label>Description</label><textarea id="lDesc" rows="3"></textarea></div>
+    <div class="field"><label>Prix affiché</label><input type="text" id="lPrice" placeholder="Ex. Prix sur demande" /></div>
+
+    <div class="error-msg" id="listingError" style="display:none;"></div>
+    <div class="panel-actions">
+      <button class="btn" onclick="closeListingEditor()">Annuler</button>
+      <button class="btn btn-danger" id="listingDeleteBtn" onclick="deleteCurrentListing()">Supprimer ce bien</button>
+      <button class="btn btn-brass" onclick="saveCurrentListing()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   AUTH — gate for site-content editing only (not investor login)
+   ============================================================ */
+function hashPw(pw){
+  try { return btoa(unescape(encodeURIComponent(String(pw||"")))); }
+  catch(e){ return "raw:" + String(pw||""); }
+}
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD_HASH = hashPw("blackland2026");
+let isAdmin = false;
+
+function openLogin(){
+  document.getElementById('loginError').style.display = 'none';
+  document.getElementById('loginUser').value = '';
+  document.getElementById('loginPass').value = '';
+  document.getElementById('loginOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('loginUser').focus(), 50);
+}
+function closeLogin(){ document.getElementById('loginOverlay').classList.remove('open'); }
+
+async function submitLogin(){
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  if (user.toLowerCase() === ADMIN_USERNAME && hashPw(pass) === ADMIN_PASSWORD_HASH) {
+    isAdmin = true;
+    await storageSet('bl_site_admin_session', '1', false);
+    closeLogin();
+    applyAdminUI();
+  } else {
+    const err = document.getElementById('loginError');
+    err.textContent = "Identifiant ou mot de passe incorrect.";
+    err.style.display = 'block';
+  }
+}
+async function logoutAdmin(){
+  isAdmin = false;
+  await storageDelete('bl_site_admin_session', false);
+  applyAdminUI();
+}
+function applyAdminUI(){
+  document.getElementById('adminBar').style.display = isAdmin ? 'block' : 'none';
+  document.getElementById('statValuationEdit').style.display = isAdmin ? 'block' : 'none';
+  document.getElementById('statRevenueEdit').style.display = isAdmin ? 'block' : 'none';
+  document.getElementById('footAdminBtn').style.display = isAdmin ? 'none' : 'inline-block';
+  renderListings();
+}
+
+/* ============================================================
+   STORAGE — uses window.storage when available (Claude artifact),
+   silently no-ops otherwise (see note in the chat reply).
+   ============================================================ */
+function hasNativeStorage(){
+  return typeof window !== "undefined" && window.storage && typeof window.storage.get === "function";
+}
+async function storageGet(key, shared){
+  if (!hasNativeStorage()) return null;
+  try { const r = await window.storage.get(key, shared); return r ? r.value : null; }
+  catch(e){ return null; }
+}
+async function storageSet(key, value, shared){
+  if (!hasNativeStorage()) return null;
+  try { return await window.storage.set(key, value, shared); }
+  catch(e){ console.error('storage set failed', e); return null; }
+}
+async function storageDelete(key, shared){
+  if (!hasNativeStorage()) return null;
+  try { return await window.storage.delete(key, shared); }
+  catch(e){ return null; }
+}
+
+/* ============================================================
+   I18N — FR / EN. Covers the fixed site copy (nav, hero, markets,
+   opportunities header, trust, contact, footer). Individual listing
+   text (title/description you type in the editor) is NOT auto-
+   translated — it stays in whichever language you entered it in,
+   since that's your own editable content, not fixed site chrome.
+   ============================================================ */
+const translations = {
+  fr: {
+    nav_marches: "Nos marchés",
+    nav_opportunites: "Opportunités",
+    nav_transparence: "Transparence",
+    nav_contact: "Contact",
+    nav_investors: "Espace investisseurs",
+
+    hero_eyebrow: "Blackland Asset Management",
+    hero_h1: "L'immobilier méditerranéen,<br><em>géré avec transparence.</em>",
+    hero_sub: "Blackland identifie et sélectionne le bien qui correspond le mieux à vos objectifs d'investissement, puis s'assure que ce dernier soit conforme aux exigences juridiques, administratives et techniques. Entre la Riviera albanaise et Corfou, nous sélectionnons, gérons et valorisons des biens à fort potentiel tout en assurant un suivi quotidien. Chaque euro de revenu, chaque charge et chaque étape de gestion sont accessibles en temps réel à nos investisseurs, dans une démarche de transparence totale.",
+    hero_btn_opps: "Voir les opportunités",
+    hero_btn_markets: "Découvrir nos marchés",
+
+    stat_valuation_label: "Valorisation du portefeuille sous gestion",
+    stat_revenue_label: "Revenus locatifs générés par an",
+    btn_edit: "Modifier",
+
+    markets_eyebrow: "Deux territoires, deux logiques",
+    markets_h2: "Où nous investissons",
+    market_badge_suffix: "croissance / an",
+
+    market1_loc: "Albanie",
+    market1_p1: "La Riviera albanaise vit une transformation rapide. Portée par une demande touristique en forte hausse et des prix encore très inférieurs à ceux de ses voisines italienne et grecque, la région affiche une valorisation immobilière en progression d'environ <strong style=\"color:var(--ivory)\">10&nbsp;% par an</strong>.",
+    market1_p2: "Le marché locatif y est fortement saisonnier : une haute saison estivale intense concentre l'essentiel des revenus, ce qui en fait un territoire de <strong style=\"color:var(--ivory)\">croissance de capital</strong> avant tout — le profil idéal pour un investisseur qui vise la plus-value.",
+    market1_tag1: "Marché émergent",
+    market1_tag2: "Forte saisonnalité",
+    market1_tag3: "Plus-value à moyen terme",
+
+    market2_loc: "Grèce",
+    market2_p1: "Corfou est un marché mature, reconnu internationalement, avec une infrastructure touristique établie de longue date. Sa progression immobilière est plus modérée — environ <strong style=\"color:var(--ivory)\">4&nbsp;% par an</strong> — mais nettement plus prévisible.",
+    market2_p2: "Son atout majeur : un marché locatif actif <strong style=\"color:var(--ivory)\">toute l'année</strong>, porté par une clientèle diversifiée et une vie insulaire qui ne s'arrête pas l'hiver. C'est le territoire du <strong style=\"color:var(--ivory)\">rendement régulier</strong>, qui vient équilibrer un portefeuille.",
+    market2_tag1: "Marché mature",
+    market2_tag2: "Revenus toute l'année",
+    market2_tag3: "Stabilité",
+
+    opps_eyebrow: "Une sélection de biens",
+    opps_h2: "Un projet vous attend déjà sur place",
+    opps_intro: "Voici un aperçu de ce que nos investisseurs peuvent acquérir aujourd'hui. Chaque bien est géré et suivi par Blackland dès son acquisition.",
+    opp_more: "En savoir plus →",
+
+    trust_eyebrow: "Notre engagement",
+    trust_h2: "Une gestion que vous pouvez vérifier, pas seulement croire",
+    trust1_h3: "Transparence totale",
+    trust1_p: "Chaque réservation, chaque charge, chaque commission est enregistrée et consultable par nos investisseurs — sans rapport trimestriel filtré, en direct.",
+    trust2_h3: "Gestion locale",
+    trust2_p: "Nos équipes sur place gèrent l'accueil, le ménage et l'entretien de chaque bien, avec une exigence de qualité identique sur les deux territoires.",
+    trust3_h3: "Rendement suivi",
+    trust3_p: "Revenus, occupation et valorisation sont mesurés en continu, bien au-delà de l'estimation d'achat — pour un pilotage réel de votre investissement.",
+
+    contact_eyebrow: "Parlons de votre projet",
+    contact_h2: "Contactez-nous",
+    contact_intro: "Une question sur un bien, sur nos marchés, ou envie d'une visite ? Écrivez-nous directement.",
+    contact_email_label: "Par email",
+    contact_whatsapp_label: "Sur WhatsApp",
+
+    footLegalText: "Blackland Asset Management. Les informations présentées sur ce site (rendements, valorisations, croissance des marchés) sont communiquées à titre indicatif par Blackland et ne constituent pas un conseil en investissement. Tout investissement immobilier comporte des risques, y compris de perte en capital.",
+    footRights: "Tous droits réservés."
+  },
+  en: {
+    nav_marches: "Our markets",
+    nav_opportunites: "Opportunities",
+    nav_transparence: "Transparency",
+    nav_contact: "Contact",
+    nav_investors: "Investor area",
+
+    hero_eyebrow: "Blackland Asset Management",
+    hero_h1: "Mediterranean real estate,<br><em>managed with transparency.</em>",
+    hero_sub: "Blackland identifies and selects the property that best fits your investment goals, then ensures it meets all legal, administrative and technical requirements. Between the Albanian Riviera and Corfu, we select, manage and grow high-potential properties while tracking every detail day by day. Every euro of revenue, every expense and every step of management is visible to our investors in real time.",
+    hero_btn_opps: "View opportunities",
+    hero_btn_markets: "Discover our markets",
+
+    stat_valuation_label: "Valuation of the portfolio under management",
+    stat_revenue_label: "Rental income generated per year",
+    btn_edit: "Edit",
+
+    markets_eyebrow: "Two territories, two strategies",
+    markets_h2: "Where we invest",
+    market_badge_suffix: "growth / year",
+
+    market1_loc: "Albania",
+    market1_p1: "The Albanian Riviera is going through a rapid transformation. Driven by sharply rising tourist demand and prices still well below those of its Italian and Greek neighbours, the region shows real estate values growing by around <strong style=\"color:var(--ivory)\">10% per year</strong>.",
+    market1_p2: "The rental market here is highly seasonal: an intense summer season accounts for most of the income, making this above all a territory of <strong style=\"color:var(--ivory)\">capital growth</strong> — the ideal profile for an investor targeting appreciation.",
+    market1_tag1: "Emerging market",
+    market1_tag2: "Strong seasonality",
+    market1_tag3: "Medium-term appreciation",
+
+    market2_loc: "Greece",
+    market2_p1: "Corfu is a mature, internationally recognised market with long-established tourism infrastructure. Its real estate growth is more moderate — around <strong style=\"color:var(--ivory)\">4% per year</strong> — but considerably more predictable.",
+    market2_p2: "Its main strength: an active rental market <strong style=\"color:var(--ivory)\">all year round</strong>, driven by a diverse clientele and an island life that never really stops, even in winter. This is the territory of <strong style=\"color:var(--ivory)\">steady yield</strong>, balancing out a portfolio.",
+    market2_tag1: "Mature market",
+    market2_tag2: "Year-round income",
+    market2_tag3: "Stability",
+
+    opps_eyebrow: "A selection of properties",
+    opps_h2: "A project is already waiting for you",
+    opps_intro: "Here is a preview of what our investors can acquire today. Every property is managed and tracked by Blackland from the moment of acquisition.",
+    opp_more: "Learn more →",
+
+    trust_eyebrow: "Our commitment",
+    trust_h2: "Management you can verify, not just trust",
+    trust1_h3: "Total transparency",
+    trust1_p: "Every booking, every expense, every commission is recorded and viewable by our investors — no filtered quarterly report, live.",
+    trust2_h3: "Local management",
+    trust2_p: "Our on-the-ground teams handle guest arrivals, cleaning and upkeep for every property, with the same standard of quality across both territories.",
+    trust3_h3: "Tracked performance",
+    trust3_p: "Income, occupancy and valuation are measured continuously, well beyond the purchase estimate — for real oversight of your investment.",
+
+    contact_eyebrow: "Let's talk about your project",
+    contact_h2: "Contact us",
+    contact_intro: "A question about a property, about our markets, or would you like a visit? Write to us directly.",
+    contact_email_label: "By email",
+    contact_whatsapp_label: "On WhatsApp",
+
+    footLegalText: "Blackland Asset Management. The information presented on this site (returns, valuations, market growth) is provided by Blackland for information purposes only and does not constitute investment advice. Any real estate investment carries risk, including the risk of capital loss.",
+    footRights: "All rights reserved."
+  }
+};
+
+let currentLang = "fr";
+
+function T(key){
+  return (translations[currentLang] && translations[currentLang][key] != null) ? translations[currentLang][key] : key;
+}
+
+async function setLanguage(lang){
+  if (!translations[lang]) return;
+  currentLang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const k = el.getAttribute('data-i18n');
+    if (translations[lang][k] != null) el.textContent = translations[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const k = el.getAttribute('data-i18n-html');
+    if (translations[lang][k] != null) el.innerHTML = translations[lang][k];
+  });
+  const flt = document.getElementById('footLegalText');
+  const frt = document.getElementById('footRights');
+  if (flt) flt.textContent = translations[lang].footLegalText;
+  if (frt) frt.textContent = translations[lang].footRights;
+
+  document.querySelectorAll('.lang-btn').forEach((b) => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  document.documentElement.lang = lang;
+
+  if (typeof renderListings === 'function') renderListings();
+  await storageSet('bl_site_lang', lang, false);
+}
+
+/* ============================================================
+   DATA MODEL
+   ============================================================ */
+const DEFAULT_ICONS = {
+  villa: '<svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 54 L48 30 L78 54" stroke="#C9A876" stroke-width="1.4"/><rect x="24" y="54" width="48" height="26" stroke="#C9A876" stroke-width="1.4"/><rect x="44" y="62" width="8" height="18" stroke="#C9A876" stroke-width="1.2"/><path d="M10 80 L86 80" stroke="#8C8577" stroke-width="1"/></svg>',
+  apartment: '<svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="26" y="18" width="44" height="62" stroke="#C9A876" stroke-width="1.4"/><path d="M26 34 L70 34 M26 50 L70 50 M26 66 L70 66" stroke="#C9A876" stroke-width="0.9"/><path d="M10 80 C 26 72 40 78 50 74 C 62 70 74 76 86 70" stroke="#8C8577" stroke-width="1"/></svg>',
+  penthouse: '<svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="34" y="10" width="28" height="70" stroke="#C9A876" stroke-width="1.4"/><path d="M34 24 L62 24 M34 38 L62 38 M34 52 L62 52 M34 66 L62 66" stroke="#C9A876" stroke-width="0.9"/><path d="M40 10 L40 4 M56 10 L56 4" stroke="#8C8577" stroke-width="1"/><path d="M14 80 L82 80" stroke="#8C8577" stroke-width="1"/></svg>',
+  poolhouse: '<svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="46" width="42" height="24" stroke="#C9A876" stroke-width="1.4"/><path d="M16 46 L37 32 L58 46" stroke="#C9A876" stroke-width="1.4"/><rect x="60" y="58" width="22" height="12" rx="1" stroke="#8C8577" stroke-width="1.1"/><path d="M64 58 L64 70 M78 58 L78 70" stroke="#8C8577" stroke-width="0.8"/><path d="M10 82 L88 82" stroke="#8C8577" stroke-width="1"/></svg>',
+  generic: '<svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 54 L48 30 L78 54" stroke="#8C8577" stroke-width="1.4"/><rect x="24" y="54" width="48" height="26" stroke="#8C8577" stroke-width="1.4"/></svg>'
+};
+
+function defaultData(){
+  return {
+    valuation: 512326,
+    revenue: 36549,
+    listings: [
+      { id:'l1', icon:'villa', tag:'Villa', title:'Villa sur les hauteurs de Saranda', loc:'Saranda, Albanie', desc:"Une villa contemporaine surplombant la baie, pensée pour la location courte durée haut de gamme. Terrasses panoramiques, orientation plein sud, à quelques minutes du centre.", price:'Prix sur demande' },
+      { id:'l2', icon:'apartment', tag:'Appartement 2+1', title:'Appartement vue mer dégagée', loc:'Ksamil, Albanie', desc:"Deux chambres et un salon largement ouvert sur la mer Ionienne. Un format très recherché en location saisonnière, dans une résidence récente à deux pas des plages.", price:'Prix sur demande' },
+      { id:'l3', icon:'penthouse', tag:'Penthouse', title:"Penthouse avec toit-terrasse", loc:'Saranda, Albanie', desc:"Le dernier étage d'un immeuble neuf, avec toit-terrasse privatif offrant une vue à 360° sur la baie. Le positionnement premium de notre gamme sur ce marché.", price:'Prix sur demande' },
+      { id:'l4', icon:'poolhouse', tag:'Maison de charme', title:'Maison avec piscine, esprit Sud de la France', loc:'Corfou, Grèce', desc:"Pierre apparente, volets colorés, jardin d'oliviers et piscine à débordement — une maison de caractère qui rappelle la Provence, dans l'un des villages les plus prisés de l'île.", price:'Prix sur demande' }
+    ]
+  };
+}
+
+let siteData = defaultData();
+let photoCache = {};
+const fmt = new Intl.NumberFormat('fr-FR');
+
+async function loadSiteData(){
+  const raw = await storageGet('bl_site_data', true);
+  if (raw) { try { siteData = JSON.parse(raw); } catch(e){ siteData = defaultData(); } }
+  for (const l of siteData.listings) {
+    const p = await storageGet('bl_site_photo_' + l.id, true);
+    if (p) photoCache[l.id] = p;
+  }
+  renderStats();
+  renderListings();
+}
+async function saveSiteData(){
+  await storageSet('bl_site_data', JSON.stringify(siteData), true);
+}
+
+/* ============================================================
+   RENDER — stats
+   ============================================================ */
+function renderStats(){
+  document.getElementById('statValuationDisplay').textContent = fmt.format(siteData.valuation) + ' €';
+  document.getElementById('statRevenueDisplay').textContent = fmt.format(siteData.revenue) + ' €';
+}
+
+let currentStatKey = null;
+function openStatEditor(key){
+  currentStatKey = key;
+  document.getElementById('statOverlayTitle').textContent =
+    key === 'valuation' ? 'Modifier la valorisation du portefeuille' : 'Modifier les revenus locatifs annuels';
+  document.getElementById('statInput').value = siteData[key];
+  document.getElementById('statError').style.display = 'none';
+  document.getElementById('statOverlay').classList.add('open');
+}
+function closeStatEditor(){ document.getElementById('statOverlay').classList.remove('open'); }
+async function saveStatEditor(){
+  const raw = document.getElementById('statInput').value.trim().replace(/\s/g,'').replace(',', '.');
+  const val = Number(raw);
+  if (!Number.isFinite(val) || val < 0) {
+    const err = document.getElementById('statError');
+    err.textContent = "Merci d'indiquer un montant valide (ex. 512326 ou 512326.50).";
+    err.style.display = 'block';
+    return;
+  }
+  siteData[currentStatKey] = val;
+  await saveSiteData();
+  renderStats();
+  closeStatEditor();
+}
+
+/* ============================================================
+   RENDER — listings
+   ============================================================ */
+function escapeHtml(s){
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderListings(){
+  const grid = document.getElementById('oppsGrid');
+  let html = '';
+  siteData.listings.forEach((l) => {
+    const photo = photoCache[l.id];
+    const visual = photo
+      ? '<img src="' + photo + '" alt="' + escapeHtml(l.title) + '" style="width:100%;height:100%;object-fit:cover;">'
+      : (DEFAULT_ICONS[l.icon] || DEFAULT_ICONS.generic);
+    html += ''
+      + '<div class="opp-card reveal in">'
+      +   '<div class="opp-visual">'
+      +     visual
+      +     (isAdmin ? '<button class="opp-edit-btn" onclick="openListingEditor(\'' + l.id + '\')" title="Modifier ce bien">✎</button>' : '')
+      +   '</div>'
+      +   '<div class="opp-body">'
+      +     '<div class="opp-tag">' + escapeHtml(l.tag) + '</div>'
+      +     '<h3 class="serif">' + escapeHtml(l.title) + '</h3>'
+      +     '<span class="loc">' + escapeHtml(l.loc) + '</span>'
+      +     '<p>' + escapeHtml(l.desc) + '</p>'
+      +     '<div class="opp-foot">'
+      +       '<span class="opp-price">' + escapeHtml(l.price) + '</span>'
+      +       '<a href="#contact" class="opp-link">' + T('opp_more') + '</a>'
+      +     '</div>'
+      +   '</div>'
+      + '</div>';
+  });
+  if (isAdmin) {
+    html += '<div class="opp-add-card" onclick="openListingEditor(null)">+ &nbsp;Ajouter un bien</div>';
+  }
+  grid.innerHTML = html;
+}
+
+/* ---- listing editor ---- */
+let currentListingId = null;
+let pendingPhotoDataUrl = null;
+
+function openListingEditor(id){
+  currentListingId = id;
+  pendingPhotoDataUrl = null;
+  const isNew = id === null;
+  document.getElementById('listingOverlayTitle').textContent = isNew ? 'Ajouter un bien' : 'Modifier ce bien';
+  document.getElementById('listingDeleteBtn').style.display = isNew ? 'none' : 'inline-flex';
+  document.getElementById('listingError').style.display = 'none';
+
+  const l = isNew ? { tag:'', title:'', loc:'', desc:'', price:'Prix sur demande' } :
+    siteData.listings.find((x) => x.id === id);
+
+  document.getElementById('lTag').value = l.tag || '';
+  document.getElementById('lTitle').value = l.title || '';
+  document.getElementById('lLoc').value = l.loc || '';
+  document.getElementById('lDesc').value = l.desc || '';
+  document.getElementById('lPrice').value = l.price || 'Prix sur demande';
+
+  const preview = document.getElementById('listingPhotoPreview');
+  const existingPhoto = !isNew ? photoCache[id] : null;
+  preview.innerHTML = existingPhoto ? ('<img src="' + existingPhoto + '">') : 'Aucune photo';
+
+  document.getElementById('listingOverlay').classList.add('open');
+}
+function closeListingEditor(){ document.getElementById('listingOverlay').classList.remove('open'); }
+
+function resizeImage(file, maxDim, quality){
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        let w = img.width, h = img.height;
+        if (w >= h && w > maxDim) { h = Math.round(h * maxDim / w); w = maxDim; }
+        else if (h > maxDim) { w = Math.round(w * maxDim / h); h = maxDim; }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = reject;
+      img.src = e.target.result;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+async function onListingPhotoChange(event){
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+  try {
+    const dataUrl = await resizeImage(file, 1000, 0.82);
+    pendingPhotoDataUrl = dataUrl;
+    document.getElementById('listingPhotoPreview').innerHTML = '<img src="' + dataUrl + '">';
+  } catch(e) {
+    console.error('photo resize failed', e);
+  }
+}
+
+async function saveCurrentListing(){
+  const tag = document.getElementById('lTag').value.trim();
+  const title = document.getElementById('lTitle').value.trim();
+  const loc = document.getElementById('lLoc').value.trim();
+  const desc = document.getElementById('lDesc').value.trim();
+  const price = document.getElementById('lPrice').value.trim() || 'Prix sur demande';
+
+  if (!title || !loc) {
+    const err = document.getElementById('listingError');
+    err.textContent = "Merci d'indiquer au moins un titre et une localisation.";
+    err.style.display = 'block';
+    return;
+  }
+
+  if (currentListingId === null) {
+    const id = 'l' + Date.now();
+    siteData.listings.push({ id: id, icon:'generic', tag: tag, title: title, loc: loc, desc: desc, price: price });
+    if (pendingPhotoDataUrl) {
+      photoCache[id] = pendingPhotoDataUrl;
+      await storageSet('bl_site_photo_' + id, pendingPhotoDataUrl, true);
+    }
+  } else {
+    const l = siteData.listings.find((x) => x.id === currentListingId);
+    Object.assign(l, { tag: tag, title: title, loc: loc, desc: desc, price: price });
+    if (pendingPhotoDataUrl) {
+      photoCache[currentListingId] = pendingPhotoDataUrl;
+      await storageSet('bl_site_photo_' + currentListingId, pendingPhotoDataUrl, true);
+    }
+  }
+  await saveSiteData();
+  renderListings();
+  closeListingEditor();
+}
+
+async function deleteCurrentListing(){
+  if (currentListingId === null) return;
+  siteData.listings = siteData.listings.filter((x) => x.id !== currentListingId);
+  delete photoCache[currentListingId];
+  await storageDelete('bl_site_photo_' + currentListingId, true);
+  await saveSiteData();
+  renderListings();
+  closeListingEditor();
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+renderStats();
+renderListings();
+loadSiteData();
+
+(async () => {
+  const savedLang = await storageGet('bl_site_lang', false);
+  setLanguage(savedLang === 'en' ? 'en' : 'fr');
+})();
+
+(async () => {
+  const sess = await storageGet('bl_site_admin_session', false);
+  if (sess === '1') { isAdmin = true; applyAdminUI(); }
+})();
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+revealEls.forEach((el) => io.observe(el));
+
+function animateCount(el, target, suffix){
+  const start = performance.now();
+  const duration = 1200;
+  function tick(now){
+    const t = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = fmt.format(Math.round(target * eased)) + suffix;
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const statsIO = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    animateCount(document.getElementById('statValuationDisplay'), siteData.valuation, ' €');
+    animateCount(document.getElementById('statRevenueDisplay'), siteData.revenue, ' €');
+    statsIO.disconnect();
+  });
+}, { threshold: 0.4 });
+statsIO.observe(document.querySelector('.stats-band'));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('loginUser').addEventListener('keydown', function(e){ if (e.key === 'Enter') submitLogin(); });
+document.getElementById('loginPass').addEventListener('keydown', function(e){ if (e.key === 'Enter') submitLogin(); });
+document.getElementById('statInput').addEventListener('keydown', function(e){ if (e.key === 'Enter') saveStatEditor(); });
+
+/* ============================================================
+   ANCHOR NAVIGATION — handled manually in JS rather than relying on
+   the browser's native "#id" jump, which can be unreliable inside a
+   sandboxed preview. Covers every same-page link (nav, hero buttons,
+   footer, "En savoir plus").
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ============================================================
+   INVESTOR APP LINK — points to the published link of the
+   "Blackland — Registre de transparence" artifact.
+   TODO: once you click "Share" on that artifact in Claude, paste the
+   public link it gives you between the quotes below.
+   ============================================================ */
+const INVESTOR_APP_URL = "https://claude.ai/public/artifacts/57e99d39-9882-4783-bcae-c19b8b1dded8";
+
+function showToast(msg){
+  let el = document.getElementById('blToast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'blToast';
+    el.style.cssText = 'position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);'
+      + 'background:var(--ink-panel);border:1px solid var(--brass);color:var(--ivory);'
+      + 'font-family:Inter,sans-serif;font-size:13px;padding:12px 20px;border-radius:4px;'
+      + 'z-index:400;opacity:0;transition:opacity .25s ease, transform .25s ease;max-width:340px;text-align:center;';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  requestAnimationFrame(() => {
+    el.style.opacity = '1';
+    el.style.transform = 'translateX(-50%) translateY(0)';
+  });
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-50%) translateY(20px)';
+  }, 3200);
+}
+
+document.getElementById('investorBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  if (INVESTOR_APP_URL) {
+    window.open(INVESTOR_APP_URL, '_blank', 'noopener');
+  } else {
+    showToast("Lien vers l'espace investisseurs à configurer — voir INVESTOR_APP_URL dans le code.");
+  }
+});
+</script>
+
+</body>
+</html>
